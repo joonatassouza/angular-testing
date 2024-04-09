@@ -1,27 +1,61 @@
-# TestIt
+# Angular Project README
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.13.
+This Angular project is designed to demonstrate the synchronization of data between components using services and @Input/@Output decorators.
 
-## Development server
+## Project Structure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The project structure is organized as follows:
 
-## Code scaffolding
+```
+angular-project/
+│
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── first/
+│   │   │   │   ├── first.component.ts
+│   │   │   │   ├── first.component.html
+│   │   │   │   ├── first.component.scss
+│   │   │   │
+│   │   │   ├── second/
+│   │   │   │   ├── second.component.ts
+│   │   │   │   ├── second.component.html
+│   │   │   │   ├── second.component.scss
+│   │   │   │
+│   │   ├── services/
+│   │   │   ├── shared.service.ts
+│   │   │
+│   │   ├── app.component.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │
+│   │   ├── app-routing.module.ts
+│   │   ├── app.module.ts
+│   │   ├── ...
+│
+├── ...
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- `first.component`: First component with input fields for product price and discount.
+- `second.component`: Second component receiving the price with discount from the first component, and receive input for tax value and returns through Output() the final price
+- `main-container.component`: Main container component containing both the first and second components.
+- `shared.service`: Shared service managing the synchronization of data between components.
+- `app-routing.module`: Routing module defining routes for the application.
 
-## Build
+## Running the Application
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To run the application, follow these steps:
 
-## Running unit tests
+1. **Install Dependencies**: Run `npm install` to install all dependencies.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Start the Development Server**: Run `yarn start` to start the development server. Navigate to `http://localhost:4200/` to view the application in your browser.
 
-## Running end-to-end tests
+## Accessing the First Component
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To access the first component via a route, follow these steps:
 
-## Further help
+1. Navigate to `http://localhost:4200/product` to access the first component.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Testing
+
+Unit tests have been provided for both the `FirstComponent` and the `SecondComponent`. To run the tests, use the command `yarn test`.

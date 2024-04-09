@@ -1,0 +1,24 @@
+<div class="container">
+  <label for="productPrice">Current Product Price</label>
+  <input
+    id="productPrice"
+    type="number"
+    [(ngModel)]="productPrice"
+    placeholder="Product Price"
+    disabled
+  />
+  <label for="tax">Tax</label>
+  <input
+    id="tax"
+    type="number"
+    [(ngModel)]="tax"
+    placeholder="Tax"
+    (input)="calculateProductPrice()"
+  />
+  <footer>
+    <h3>Final Price</h3>
+    <p>
+      {{ finalPrice | currency }}
+    </p>
+  </footer>
+</div>

@@ -1,0 +1,30 @@
+<div class="content">
+  <div class="left-side">
+    <label for="price">Product Price</label>
+    <input
+      id="price"
+      type="number"
+      [(ngModel)]="price"
+      placeholder="Product price"
+      (input)="calculateDiscount()"
+    />
+    <label for="discount">Discount</label>
+    <input
+      id="discount"
+      type="number"
+      [(ngModel)]="discount"
+      placeholder="Discount"
+      (input)="calculateDiscount()"
+    />
+    <footer>
+      <h3>Final Price</h3>
+      <p>
+        {{ finalPrice | currency }}
+      </p>
+    </footer>
+  </div>
+  <div class="divider" role="separator" aria-label="Divider"></div>
+  <div class="right-side">
+    <app-second (priceWithTax)="getFinalPrice($event)"></app-second>
+  </div>
+</div>
